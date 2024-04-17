@@ -1,9 +1,12 @@
 /* set page */
 #set page(
-  header: align(right, text(13pt)[A template created by ririka]),
+  header: align(right, text(13pt,
+  weight: "thin",
+  )[A template created by ririka]),
+
   width: 21cm,
   height: auto,
-  numbering: "1"
+  numbering: "-1-"
 )
 
 /* set heading */
@@ -20,13 +23,27 @@
   par()[#text(size:0.5em)[#h(0.0em)]]
 }
 
+/* title */
+#align(center, text(
+  36pt,
+  weight: "bold",
+)[A useful and important research for the title])
+
+#align(center, text(
+  14pt,
+  weight: "thin",
+)[ririka, unknown university])
+
+#line(length: 100%)
+
 /* text body */
-= WOW
-This is a math expression.
+= Expression
+  This is a math expression.
 
 #align(center, $F_n = F_(n - 1) + F_(n - 2)$)
 
-= WOA
+= Table
+
 This is a table.
 
 #let col = 10
@@ -54,7 +71,8 @@ This is a table.
   ..nums.map(n => str(fib(n)))
 ))
 
-= WAIT
+= Grid
+
 This is a grid with rect
 
 #set rect(
@@ -67,8 +85,70 @@ This is a grid with rect
   columns: 3,
   rows: (auto, 60pt),
   gutter: 3pt,
-  rect[this is a test],
+  rect[this is a grid],
   rect[1/3 remains],
   rect[2/3 remains],
   rect(height: 100%)[fixed height]
 ))
+
+= Code block
+*Style 1*
+
+#align(center, text(
+  
+  [```C
+    /* A C program sample */
+    #include <stdio.h>
+    int main(){
+      int a = 1;
+      int b = 2;
+      printf("res:%d\n", a+b);
+      return 0;
+    }
+  ```]
+))\
+
+Use the block directly, but the statement which right follows the block will lose it's retraction.
+
+So use a '\\' to fix that.
+
+*Style 2*
+
+#align(center, table(
+  columns: 1,
+)[
+    ```c
+    /* A C program sample */
+    #include <stdio.h>
+    int main(){
+      int a = 1;
+      int b = 2;
+      printf("res:%d\n", a+b);
+      return 0;
+    }
+    ```])\
+
+Use the 'table' to add a frame for the code.
+
+*Style 3*
+
+#show raw: it => block(
+  fill: rgb("#1d2433"),
+  inset: 10pt,
+  radius: 5pt,
+  text(fill: rgb("#a2aabc"), it),
+)
+
+#align(center, text(
+)[```c
+    /* A C program sample */
+    #include <stdio.h>
+    int main(){
+      int a = 1;
+      int b = 2;
+      printf("res:%d\n", a+b);
+      return 0;
+    }
+    ```])\
+
+Use 'show' to change the style.

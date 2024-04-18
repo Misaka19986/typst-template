@@ -1,11 +1,11 @@
 /* set page */
 #set page(
-  header: align(right, text(13pt,
+  header: align(right, text(9pt,
   weight: "thin",
   )[A template created by ririka]),
 
   width: 21cm,
-  height: auto,
+  height: 29.7cm,
   numbering: "-1-"
 )
 
@@ -13,7 +13,7 @@
 #set heading(numbering: "1.")
 
 /* set body font */
-#set text(17pt, font: ("Noto Serif CJK SC", "JetBrains Mono"))
+#set text(14pt, font: ("Noto Serif CJK SC", "JetBrains Mono"))
 
 /* set retraction */
 #set par(justify: true, first-line-indent: 2em)
@@ -24,23 +24,20 @@
 }
 
 /* set figure */
-#show figure.caption: set text(14pt, style: "italic")
+#show figure.caption: set text(12pt, style: "italic")
 
 /* title */
 #align(center, text(
-  36pt,
+  32pt,
   weight: "bold",
 )[A useful and important research for the title])
 
 #align(center, text(
-  14pt,
+  12pt,
   weight: "thin",
 )[ririka, unknown university])
 
 #line(length: 100%)
-
-
-
 
 
 /* text body */
@@ -72,11 +69,11 @@ This is a table.
   return b
 }
 
-#align(center, table(
+#align(center, figure(table(
   columns: col,
   ..nums.map(n => $F_#n$),
   ..nums.map(n => str(fib(n)))
-))
+),caption: "Fib"))
 
 = Grid
 

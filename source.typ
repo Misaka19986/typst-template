@@ -23,6 +23,9 @@
   par()[#text(size:0.5em)[#h(0.0em)]]
 }
 
+/* set figure */
+#show figure.caption: set text(14pt, style: "italic")
+
 /* title */
 #align(center, text(
   36pt,
@@ -35,6 +38,10 @@
 )[ririka, unknown university])
 
 #line(length: 100%)
+
+
+
+
 
 /* text body */
 = Expression

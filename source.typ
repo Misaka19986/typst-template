@@ -33,7 +33,7 @@
 )[A useful and important research for the title])
 
 #align(center, text(
-  12pt,
+  16pt,
   weight: "thin",
 )[ririka, unknown university])
 
